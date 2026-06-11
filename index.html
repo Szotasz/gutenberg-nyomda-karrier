@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Karrier – Gutenberg Nyomda Kft. | Nyomdai gépkezelő-grafikus állás</title>
+  <meta name="description" content="Csatlakozz a Gutenberg Nyomda csapatához Budapesten! Nyomdai gépkezelő-grafikus pozíciót keresünk. 2009 óta, 12 fős stabil csapat. Jelentkezz még ma." />
+  <meta property="og:title" content="Nyomdai gépkezelő-grafikus állás – Gutenberg Nyomda Kft." />
+  <meta property="og:description" content="Stabil budapesti nyomda keres nyomdai gépkezelő-grafikust. Jelentkezz online!" />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #15203b;
+      --ink-soft: #2c3a5c;
+      --paper: #f6f1e7;
+      --paper-2: #efe7d6;
+      --card: #fffdf8;
+      --accent: #c4452d;     /* press vermilion */
+      --accent-dark: #a5371f;
+      --gold: #c79a3a;
+      --line: #ddd2bd;
+      --muted: #6b7180;
+      --shadow: 0 18px 50px -22px rgba(21, 32, 59, 0.45);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    h1, h2, h3, .display { font-family: 'Fraunces', Georgia, serif; line-height: 1.1; }
+    .wrap { width: min(1120px, 92vw); margin: 0 auto; }
+    a { color: inherit; }
+    .accent { color: var(--accent); }
+
+    /* ---------- top bar ---------- */
+    header {
+      position: sticky; top: 0; z-index: 30;
+      background: rgba(246, 241, 231, 0.86);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+    }
+    .bar { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .mark {
+      width: 42px; height: 42px; border-radius: 9px; flex: none;
+      background: var(--ink); color: var(--paper);
+      display: grid; place-items: center;
+      font-family: 'Fraunces', serif; font-weight: 700; font-size: 24px;
+      box-shadow: inset 0 0 0 2px rgba(255,255,255,0.12);
+    }
+    .brand b { font-family: 'Fraunces', serif; font-size: 19px; letter-spacing: .2px; display: block; }
+    .brand span { font-size: 12px; color: var(--muted); letter-spacing: 1.5px; text-transform: uppercase; }
+    .btn {
+      display: inline-block; background: var(--accent); color: #fff;
+      padding: 13px 24px; border-radius: 8px; font-weight: 600; font-size: 15px;
+      text-decoration: none; border: none; cursor: pointer;
+      transition: transform .15s ease, background .15s ease, box-shadow .15s ease;
+      box-shadow: 0 8px 22px -10px rgba(196, 69, 45, .8);
+    }
+    .btn:hover { background: var(--accent-dark); transform: translateY(-1px); }
+    .btn.ghost { background: transparent; color: var(--ink); box-shadow: inset 0 0 0 1.5px var(--ink); }
+    .btn.ghost:hover { background: var(--ink); color: var(--paper); }
+    .bar .btn { padding: 11px 20px; }
+
+    /* ---------- hero ---------- */
+    .hero { padding: 78px 0 64px; position: relative; overflow: hidden; }
+    .hero::after {
+      content: ""; position: absolute; right: -120px; top: -80px; width: 460px; height: 460px;
+      background: radial-gradient(circle, rgba(199,154,58,.16), transparent 62%);
+      pointer-events: none;
+    }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 9px;
+      font-size: 13px; font-weight: 600; letter-spacing: .5px; color: var(--accent-dark);
+      background: #fff4ec; border: 1px solid #f0d3c5; padding: 7px 14px; border-radius: 999px;
+      margin-bottom: 22px;
+    }
+    .eyebrow::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
+    .hero h1 { font-size: clamp(2.5rem, 6vw, 4.2rem); font-weight: 600; max-width: 14ch; }
+    .hero h1 em { font-style: normal; color: var(--accent); }
+    .hero p.lead { font-size: clamp(1.05rem, 2.2vw, 1.3rem); color: var(--ink-soft); max-width: 52ch; margin: 22px 0 32px; }
+    .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+    .hero-note { font-size: 14px; color: var(--muted); }
+
+    /* ---------- stats ---------- */
+    .stats { padding: 8px 0 60px; }
+    .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+    .stat {
+      background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+      padding: 26px 24px; box-shadow: var(--shadow);
+    }
+    .stat .num { font-family: 'Fraunces', serif; font-size: 2.4rem; font-weight: 700; color: var(--ink); line-height: 1; }
+    .stat .num small { font-size: 1.1rem; color: var(--accent); }
+    .stat .lbl { margin-top: 8px; font-size: 14px; color: var(--muted); }
+
+    /* ---------- section frame ---------- */
+    section.block { padding: 70px 0; }
+    .section-head { max-width: 60ch; margin-bottom: 40px; }
+    .section-head .kicker { font-size: 13px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); }
+    .section-head h2 { font-size: clamp(1.9rem, 4vw, 2.8rem); font-weight: 600; margin-top: 12px; }
+    .section-head p { color: var(--ink-soft); margin-top: 14px; font-size: 1.08rem; }
+
+    .about { background: var(--ink); color: #eef1f6; border-radius: 26px; padding: 56px clamp(24px, 5vw, 64px); box-shadow: var(--shadow); }
+    .about .section-head h2 { color: #fff; }
+    .about .section-head p { color: #c2cad9; }
+    .about-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 44px; align-items: center; }
+    .about ul.values { list-style: none; display: grid; gap: 14px; }
+    .about ul.values li { display: flex; gap: 12px; align-items: flex-start; color: #d8deea; }
+    .about ul.values li b { color: #fff; font-family: inherit; font-weight: 600; }
+    .tick { color: var(--gold); font-weight: 700; flex: none; }
+
+    /* ---------- position columns ---------- */
+    .cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .col {
+      background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 30px 28px;
+      box-shadow: var(--shadow);
+    }
+    .col h3 { font-size: 1.3rem; margin-bottom: 6px; }
+    .col .tag { font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent); font-weight: 600; }
+    .col ul { list-style: none; margin-top: 18px; display: grid; gap: 12px; }
+    .col ul li { position: relative; padding-left: 26px; color: var(--ink-soft); }
+    .col ul li::before {
+      content: ""; position: absolute; left: 0; top: 9px; width: 12px; height: 2px; background: var(--accent);
+    }
+
+    /* ---------- form ---------- */
+    .apply { background: var(--paper-2); border-radius: 26px; padding: 56px clamp(24px,5vw,60px); box-shadow: var(--shadow); border: 1px solid var(--line); }
+    .apply-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 48px; align-items: start; }
+    .apply h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 600; }
+    .apply .blurb { color: var(--ink-soft); margin-top: 14px; }
+    .apply .perks { list-style: none; margin-top: 24px; display: grid; gap: 12px; }
+    .apply .perks li { display: flex; gap: 10px; align-items: flex-start; }
+    form { display: grid; gap: 18px; background: var(--card); padding: 30px; border-radius: 16px; border: 1px solid var(--line); }
+    .field { display: grid; gap: 7px; }
+    .field label { font-size: 14px; font-weight: 600; }
+    .field label .req { color: var(--accent); }
+    .field input[type="text"], .field input[type="email"] {
+      padding: 13px 15px; border: 1.5px solid var(--line); border-radius: 9px; font: inherit; background: #fff; color: var(--ink);
+      transition: border-color .15s ease, box-shadow .15s ease;
+    }
+    .field input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(196,69,45,.12); }
+    .file-drop {
+      border: 1.5px dashed var(--line); border-radius: 10px; padding: 18px; background: #fff;
+      display: flex; align-items: center; gap: 14px; cursor: pointer; transition: border-color .15s ease, background .15s ease;
+    }
+    .file-drop:hover { border-color: var(--accent); background: #fffaf6; }
+    .file-drop input { display: none; }
+    .file-drop .ic { width: 40px; height: 40px; border-radius: 8px; background: #fff4ec; color: var(--accent); display: grid; place-items: center; flex: none; font-size: 19px; }
+    .file-drop .txt small { display: block; color: var(--muted); font-size: 13px; }
+    .file-name { font-size: 13px; color: var(--ink-soft); min-height: 1em; }
+    form .btn { width: 100%; text-align: center; padding: 15px; font-size: 16px; }
+    .form-foot { font-size: 12.5px; color: var(--muted); text-align: center; }
+    .apply-success { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 44px 32px; text-align: center; box-shadow: var(--shadow); }
+    .apply-success .ok-badge { width: 66px; height: 66px; border-radius: 50%; background: #e9f6ec; color: #2e9e54; display: grid; place-items: center; margin: 0 auto 20px; font-size: 32px; }
+    .apply-success h3 { font-family: 'Fraunces', serif; font-size: 1.55rem; font-weight: 600; }
+    .apply-success p { color: var(--ink-soft); margin-top: 12px; }
+
+    /* ---------- footer ---------- */
+    footer { background: var(--ink); color: #aeb6c6; padding: 46px 0; margin-top: 70px; }
+    .foot-grid { display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap; }
+    footer .brand b { color: #fff; }
+    footer .brand span { color: #8993a8; }
+    footer a { color: #cfd6e4; text-decoration: none; }
+    footer a:hover { color: #fff; }
+    .legal { font-size: 12.5px; color: #79839a; margin-top: 6px; }
+
+    /* placeholder marker (visible to the team, removed at copy-swap) */
+    .ph { box-shadow: inset 3px 0 0 var(--gold); padding-left: 12px; }
+
+    @media (max-width: 880px) {
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .about-grid, .apply-grid { grid-template-columns: 1fr; gap: 30px; }
+      .cols { grid-template-columns: 1fr; }
+      .bar .btn { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="wrap bar">
+      <div class="brand">
+        <div class="mark">G</div>
+        <div>
+          <b>Gutenberg Nyomda</b>
+          <span>Budapest · 2009 óta</span>
+        </div>
+      </div>
+      <a href="#jelentkezes" class="btn">Jelentkezem</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="wrap">
+        <span class="eyebrow">Nyitott pozíció · Nyomdai gépkezelő-grafikus</span>
+        <h1>Ahol a papír még mindig <em>kézbe simul</em> — keressük a következő mesterünket a gép mellé.</h1>
+        <p class="lead">
+          Nyomdai gépkezelő-grafikus · teljes munkaidő · Budapest. Nálunk nem futószalag van,
+          hanem szakma — és minden munkán látszik a kezünk nyoma.
+        </p>
+        <div class="hero-cta">
+          <a href="#jelentkezes" class="btn">Jelentkezem most</a>
+          <a href="#pozicio" class="btn ghost">A pozíció részletei</a>
+          <span class="hero-note">Az önéletrajzodat néhány kattintással feltöltheted.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="stats">
+      <div class="wrap stats-grid">
+        <div class="stat"><div class="num">2009</div><div class="lbl">óta a piacon</div></div>
+        <div class="stat"><div class="num">12 <small>fő</small></div><div class="lbl">összetartó csapat</div></div>
+        <div class="stat"><div class="num">~180<small> M Ft</small></div><div class="lbl">éves árbevétel</div></div>
+        <div class="stat"><div class="num">Bp.</div><div class="lbl">budapesti telephely</div></div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="block">
+      <div class="wrap">
+        <div class="about">
+          <div class="about-grid">
+            <div>
+              <div class="section-head" style="margin-bottom:24px">
+                <div class="kicker">Kik vagyunk</div>
+                <h2>Nem futószalag — szakma</h2>
+                <p>
+                  2009 óta nyomtatunk Budapesten, tizenketten egy összeszokott csapatban. Nálunk nem
+                  futószalag van, hanem szakma: minden munkán látszik a kezünk nyoma, és büszkék vagyunk
+                  arra, amit kiadunk a kezünkből. Most egy új kollégát keresünk, aki ugyanígy gondolja.
+                </p>
+              </div>
+            </div>
+            <ul class="values">
+              <li><span class="tick">✦</span><span><b>Tizenhét év mögöttünk.</b> Stabil, kiszámítható KKV-háttér.</span></li>
+              <li><span class="tick">✦</span><span><b>Látszik a kezünk nyoma.</b> Minőség-orientált, igényes munka — itt a 95 százalék nem elég.</span></li>
+              <li><span class="tick">✦</span><span><b>Modern géppark.</b> Ofszet és digitális technológia, valódi szakmai fejlődés.</span></li>
+              <li><span class="tick">✦</span><span><b>A neved számít, nem a törzsszámod.</b> Családias, emberléptékű légkör.</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- POSITION -->
+    <section class="block" id="pozicio">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="kicker">A pozíció</div>
+          <h2>Nyomdai gépkezelő-grafikus</h2>
+          <p>
+            Teljes munkaidős pozíció Budapesten. Olyan kollégát keresünk, aki otthonosan mozog a
+            grafikai előkészítésben és a nyomdagépek mellett egyaránt — és akinek a minőség nem cél, hanem alap.
+          </p>
+        </div>
+        <div class="cols" style="grid-template-columns:repeat(2,1fr)">
+          <div class="col">
+            <span class="tag">Amit elvárunk</span>
+            <h3>Mit várunk tőled?</h3>
+            <ul>
+              <li>Nyomdai tapasztalat — ofszet vagy digitális gépkezelés, anyagismeret, színhűség iránti érzék</li>
+              <li>Magabiztos grafikai program-tudás: InDesign és/vagy Illustrator (nyomdai előkészítés, kifutók, CMYK)</li>
+              <li>Igényesség és precizitás — nálunk a 95 százalék nem elég</li>
+              <li>Önállóság, de csapatban gondolkodás</li>
+            </ul>
+          </div>
+          <div class="col">
+            <span class="tag">Amit kínálunk</span>
+            <h3>Mit kapsz cserébe?</h3>
+            <ul>
+              <li>Stabil, kiszámítható KKV-háttér, tizenhét év mögöttünk</li>
+              <li>Versenyképes fizetés és tiszta, rendezett munkakörnyezet</li>
+              <li>Modern géppark és valódi szakmai fejlődés</li>
+              <li>Családias légkör, ahol a neved és nem a törzsszámod számít</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- APPLY -->
+    <section class="block" id="jelentkezes">
+      <div class="wrap">
+        <div class="apply">
+          <div class="apply-grid">
+            <div>
+              <h2>Jelentkezz pár perc alatt</h2>
+              <p class="blurb">
+                Töltsd ki az űrlapot, csatold az önéletrajzodat, és ha van, oszd meg néhány munkádat
+                (portfólió, referencia). <strong>Minden jelentkezésre válaszolunk.</strong>
+              </p>
+              <ul class="perks">
+                <li><span class="tick">✦</span><span>Gyors, online folyamat — papírmunka nélkül.</span></li>
+                <li><span class="tick">✦</span><span>Bizalmas kezelés, csak a felvételi folyamatra.</span></li>
+                <li><span class="tick">✦</span><span>Személyes válasz, nem automata elutasítás.</span></li>
+              </ul>
+              <p class="blurb" style="font-size:14px;margin-top:22px">
+                Inkább e-mailben? Küldd el ide:
+                <a href="mailto:allas@gutenbergnyomda.hu?subject=Gépkezelő-grafikus" style="color:var(--accent);font-weight:600">allas@gutenbergnyomda.hu</a>
+                — a tárgyba írd: <em>Gépkezelő-grafikus</em>.
+              </p>
+            </div>
+
+            <form id="apply-form">
+              <div class="field">
+                <label for="nev">Teljes név <span class="req">*</span></label>
+                <input type="text" id="nev" name="nev" required placeholder="Kovács Anna" />
+              </div>
+              <div class="field">
+                <label for="email">E-mail cím <span class="req">*</span></label>
+                <input type="email" id="email" name="email" required placeholder="anna@example.com" />
+              </div>
+              <div class="field">
+                <label for="portfolio">Portfólió vagy referencia <span style="color:var(--muted);font-weight:400">(opcionális)</span></label>
+                <input type="text" id="portfolio" name="portfolio" placeholder="Link a munkáidhoz (Behance, Drive, weboldal…)" />
+              </div>
+              <div class="field">
+                <label for="onletrajz">Önéletrajz <span class="req">*</span></label>
+                <label class="file-drop" for="onletrajz">
+                  <span class="ic">↑</span>
+                  <span class="txt">
+                    <strong id="file-label">Kattints a feltöltéshez</strong>
+                    <small>PDF, DOC vagy DOCX — max. 10 MB</small>
+                  </span>
+                  <input type="file" id="onletrajz" name="onletrajz" accept=".pdf,.doc,.docx" required />
+                </label>
+                <span class="file-name" id="file-name"></span>
+              </div>
+              <button type="submit" class="btn">Jelentkezés elküldése</button>
+              <p class="form-foot">A küldéssel hozzájárulsz, hogy adataidat a felvételi folyamat során kezeljük.</p>
+            </form>
+
+            <div id="apply-success" class="apply-success" hidden>
+              <div class="ok-badge">✓</div>
+              <h3 id="success-name">Köszönjük a jelentkezésed!</h3>
+              <p>Megkaptuk az anyagodat. <strong>Minden jelentkezésre válaszolunk</strong> — 5 munkanapon belül jelentkezünk e-mailben.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap foot-grid">
+      <div class="brand">
+        <div class="mark">G</div>
+        <div>
+          <b>Gutenberg Nyomda Kft.</b>
+          <span>Budapest · 2009 óta</span>
+          <div class="legal">© 2026 Gutenberg Nyomda Kft. — Minőségi nyomdai megoldások.</div>
+        </div>
+      </div>
+      <a href="#jelentkezes" class="btn">Jelentkezem</a>
+    </div>
+  </footer>
+
+  <script>
+    // file name feedback
+    var input = document.getElementById('onletrajz');
+    if (input) {
+      input.addEventListener('change', function () {
+        var name = input.files && input.files[0] ? input.files[0].name : '';
+        document.getElementById('file-name').textContent = name ? '✓ Kiválasztva: ' + name : '';
+        document.getElementById('file-label').textContent = name ? 'Fájl kiválasztva' : 'Kattints a feltöltéshez';
+      });
+    }
+    // Self-contained demo submit: NO backend. Native required-validation gates
+    // this handler (the submit event only fires when every required field is
+    // valid), then we swap the form for an inline thank-you. Card 54582908.
+    var form = document.getElementById('apply-form');
+    if (form) {
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var nev = (document.getElementById('nev').value || '').trim();
+        var given = nev ? nev.split(/\s+/).pop() : '';   // HU névsorrend: keresztnév utol
+        var ok = document.getElementById('apply-success');
+        var h = document.getElementById('success-name');
+        if (h && given) h.textContent = 'Köszönjük a jelentkezésed, ' + given + '!';
+        form.style.display = 'none';
+        if (ok) { ok.hidden = false; ok.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
+      });
+    }
+  </script>
+</body>
+</html>
